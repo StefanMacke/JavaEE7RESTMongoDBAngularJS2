@@ -1,0 +1,6 @@
+rootProject.name = 'it-macke-ee7-minimal'
+
+include 'domain',
+	'persistence',
+	'api',
+	'web'

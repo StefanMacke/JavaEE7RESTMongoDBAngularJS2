@@ -1,0 +1,14 @@
+apply plugin: 'eclipse-wtp'
+
+eclipse {
+	project.name = group + '.persistence'
+	wtp {
+		facet {
+			facet name:'jpt.jpa', version:'2.1'
+		}
+	}
+}
+
+dependencies {
+	compile project(':domain')
+}

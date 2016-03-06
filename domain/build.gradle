@@ -1,0 +1,5 @@
+apply plugin: 'eclipse-wtp'
+
+eclipse {
+	project.name = group + '.domain'
+}

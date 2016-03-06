@@ -1,0 +1,47 @@
+subprojects {
+	group = 'it.macke.ee7.minimal'
+
+	apply plugin: 'java'
+	apply plugin: 'eclipse'
+
+	sourceCompatibility = 1.8
+	targetCompatibility = 1.8
+	compileJava.options.encoding = 'UTF-8'
+
+	eclipseJdt << {
+		File f = file('.settings/org.eclipse.core.resources.prefs')
+			f.write('eclipse.preferences.version=1\n')
+			f.append('encoding/<project>=UTF-8')
+	}
+
+	cleanEclipse << {
+		File f = file('.settings/org.eclipse.core.resources.prefs')
+			f.delete()
+	}
+
+	repositories {
+		mavenCentral()
+	}
+
+	configurations {
+		provided
+	}
+
+	sourceSets {
+		main {
+			compileClasspath += configurations.provided
+			runtimeClasspath += configurations.provided
+		}
+	}
+
+	eclipse {
+		classpath {
+			plusConfigurations += [ configurations.provided ]
+		}
+	}
+
+	dependencies {
+		provided 'javax:javaee-api:7.0'
+	}
+}
+

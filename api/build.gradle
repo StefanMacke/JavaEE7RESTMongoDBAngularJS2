@@ -1,0 +1,17 @@
+apply plugin: 'eclipse-wtp'
+apply plugin: 'war'
+
+eclipse {
+	project.name = group + '.api'
+	wtp {
+		facet {
+			facet name:'jst.web', version:'3.1'
+			facet name:'jst.jaxrs', version:'2.0'
+		}
+	}
+}
+
+dependencies {
+	compile project(':domain')
+	compile project(':persistence')
+}
