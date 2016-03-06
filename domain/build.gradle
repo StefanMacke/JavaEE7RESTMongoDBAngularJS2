@@ -3,3 +3,7 @@ apply plugin: 'eclipse-wtp'
 eclipse {
 	project.name = group + '.domain'
 }
+
+dependencies {
+	compile 'org.hibernate.ogm:hibernate-ogm-mongodb:4.2.0.Final'
+}

@@ -3,11 +3,16 @@
 	xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd">
 	<persistence-unit name="Talks">
-		<jta-data-source>java:/Talks</jta-data-source>
+		<provider>org.hibernate.ogm.jpa.HibernateOgmPersistence</provider>
 		<class>it.macke.ee7.minimal.domain.Talk</class>
 		<class>it.macke.ee7.minimal.domain.Attendee</class>
 		<properties>
-			<property name="hibernate.hbm2ddl.auto" value="update" />
+			<property name="hibernate.ogm.datastore.provider"
+				value="org.hibernate.ogm.datastore.mongodb.impl.MongoDBDatastoreProvider" />
+			<property name="hibernate.ogm.datastore.database" value="Talks" />
+			<property name="hibernate.ogm.datastore.host" value="localhost" />
+			<property name="hibernate.ogm.datastore.port" value="27017" />
+			<property name="hibernate.ogm.datastore.create_database" value="true" />
 		</properties>
 	</persistence-unit>
 </persistence>

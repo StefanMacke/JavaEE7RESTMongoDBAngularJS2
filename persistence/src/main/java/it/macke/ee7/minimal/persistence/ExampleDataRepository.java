@@ -4,6 +4,7 @@ import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.context.Initialized;
 import javax.enterprise.event.Observes;
 import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
 
@@ -21,7 +22,11 @@ public class ExampleDataRepository
 	{
 		try
 		{
-			if (em.createQuery("SELECT COUNT(t) FROM Talk t", Long.class).getSingleResult() == 0)
+			try
+			{
+				em.createQuery("SELECT COUNT(t) FROM Talk t", Long.class).getSingleResult();
+			}
+			catch (final NoResultException e)
 			{
 				em.persist(new Talk("Java EE 7", "Fun with Java EE 7"));
 				em.persist(new Talk("More Java EE 7", "More Fun with Java EE 7"));
@@ -39,7 +44,11 @@ public class ExampleDataRepository
 	{
 		try
 		{
-			if (em.createQuery("SELECT COUNT(a) FROM Attendee a", Long.class).getSingleResult() == 0)
+			try
+			{
+				em.createQuery("SELECT COUNT(a) FROM Attendee a", Long.class).getSingleResult();
+			}
+			catch (final NoResultException e)
 			{
 				em.persist(new Attendee("Stefan", "Macke"));
 				em.persist(new Attendee("Adam", "Bien"));

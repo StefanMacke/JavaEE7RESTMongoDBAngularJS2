@@ -10,12 +10,15 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 
+import org.hibernate.annotations.GenericGenerator;
+
 @Entity
 public class Talk
 {
 	@Id
-	@GeneratedValue
-	private long id;
+	@GeneratedValue(generator = "uuid")
+	@GenericGenerator(name = "uuid", strategy = "uuid2")
+	private String id;
 	private String title;
 	private String description;
 
@@ -35,7 +38,7 @@ public class Talk
 		this.description = desciption;
 	}
 
-	public long getId()
+	public String getId()
 	{
 		return id;
 	}

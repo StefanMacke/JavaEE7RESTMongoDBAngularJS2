@@ -8,12 +8,15 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 
+import org.hibernate.annotations.GenericGenerator;
+
 @Entity
 public class Attendee
 {
 	@Id
-	@GeneratedValue
-	private long id;
+	@GeneratedValue(generator = "uuid")
+	@GenericGenerator(name = "uuid", strategy = "uuid2")
+	private String id;
 	private String firstName;
 	private String lastName;
 
@@ -29,7 +32,7 @@ public class Attendee
 		this.lastName = lastName;
 	}
 
-	public long getId()
+	public String getId()
 	{
 		return id;
 	}

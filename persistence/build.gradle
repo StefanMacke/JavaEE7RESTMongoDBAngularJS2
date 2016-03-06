@@ -11,4 +11,5 @@ eclipse {
 
 dependencies {
 	compile project(':domain')
+	compile 'org.hibernate.ogm:hibernate-ogm-mongodb:4.2.0.Final'
 }
