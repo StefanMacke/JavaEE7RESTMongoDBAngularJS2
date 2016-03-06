@@ -5,7 +5,7 @@ import {DetailsComponent} from './components/talk.details';
 
 @Component({
     selector: 'talks',
-    templateUrl: '/app/templates/main.html',
+    templateUrl: './app/templates/main.html',
   	directives: [ ROUTER_DIRECTIVES ]
 })
 @RouteConfig([

@@ -2,7 +2,6 @@ package it.macke.ee7.minimal.domain;
 
 import java.util.HashSet;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -64,9 +63,9 @@ public class Talk
 		}
 	}
 
-	public Iterable<String> getAttendeeIds()
+	public Iterable<Attendee> getAttendees()
 	{
-		return attendees.stream().map(Attendee::getId).collect(Collectors.toList());
+		return attendees;
 	}
 
 	@Override

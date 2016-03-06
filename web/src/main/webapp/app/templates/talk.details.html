@@ -1,18 +1,13 @@
 <div *ngIf="talk">
-  <h1>Talk {{talk.title}}</h1>
+	<h1>{{talk.title}}</h1>
+	<p>{{talk.description}}</p>
 
-  <br/><br/>
+	<h2>Attendees</h2>
+	<ul>
+		<li *ngFor="#attendee of (talk.attendees)">
+			{{attendee.lastName}}, {{attendee.firstName}}
+		</li>
+	</ul>
 
-  <form class="form-horizontal">
-    <field label="Title">
-      <input [(ngModel)]="talk.title"/>
-    </field>
-    <field label="Description">
-      <input [(ngModel)]="talk.description"/>
-    </field>
-  </form>
-
-  <br/><br/>
-
-  <a href="/#/talks">Back to the list</a>
+	<p><a href="/TalksWeb/#/talks">Back to the list</a></p>
 </div>

@@ -2,8 +2,12 @@ import {Injectable} from 'angular2/core';
 import {Http} from 'angular2/http';
 import 'rxjs/add/operator/map';
 
+export class Attendee {
+  constructor(public id: string, public firstName: string, public lastName: string) { }
+}
+
 export class Talk {
-  constructor(public id: string, public title: string, public description: string) { }
+  constructor(public id: string, public title: string, public description: string, public attendees: Attendee[]) { }
 }
 
 @Injectable()
