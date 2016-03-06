@@ -10,19 +10,19 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
-import it.macke.ee7.minimal.domain.Talk;
-import it.macke.ee7.minimal.persistence.TalkRepository;
+import it.macke.ee7.minimal.domain.Attendee;
+import it.macke.ee7.minimal.persistence.AttendeeRepository;
 
-@Path("/talks")
-public class TalkResource
+@Path("/attendees")
+public class AttendeeResource
 {
 	@Inject
-	private TalkRepository repo;
+	private AttendeeRepository repo;
 
 	@GET
 	@Path("/")
 	@Produces(MediaType.APPLICATION_JSON)
-	public Iterable<Talk> allTalks()
+	public Iterable<Attendee> allTalks()
 	{
 		return repo.findAll();
 	}
@@ -30,13 +30,13 @@ public class TalkResource
 	@GET
 	@Path("/{id}")
 	@Produces(MediaType.APPLICATION_JSON)
-	public Talk findTalk(@PathParam("id") final String id)
+	public Attendee findAttendee(@PathParam("id") final String id)
 	{
-		final Optional<Talk> talk = repo.find(id);
-		if (!talk.isPresent())
+		final Optional<Attendee> attendee = repo.find(id);
+		if (!attendee.isPresent())
 		{
 			throw new NotFoundException();
 		}
-		return talk.get();
+		return attendee.get();
 	}
 }
