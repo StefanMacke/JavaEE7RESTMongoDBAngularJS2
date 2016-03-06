@@ -1,4 +1,5 @@
 apply plugin: 'eclipse-wtp'
+apply plugin: 'war'
 
 eclipse {
 	project.name = group + '.web'
@@ -8,8 +9,4 @@ eclipse {
 			facet name:'jst.jsf', version:'2.2'
 		}
 	}
-}
-
-dependencies {
-	compile project(':domain')
 }
