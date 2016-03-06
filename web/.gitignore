@@ -1,4 +1,4 @@
 src/main/webapp/typings/
 src/main/webapp/node_modules/
-src/main/webapp/app/*.js
-src/main/webapp/app/*.map
+*.js
+*.js.map

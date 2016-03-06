@@ -1,19 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:c="http://java.sun.com/jsp/jstl/core"
-	xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
+<!DOCTYPE html>
+<html>
 
-<h:head>
+<head>
 	<meta content="text/html; charset=UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<title>Conference Talks</title>
-	<h:outputStylesheet library="css" name="talks.css" />
-	<h:outputStylesheet library="css" name="bootstrap.min.css" />
 
+	<link rel="stylesheet" href="resources/css/bootstrap.min.css" />
 	<script src="node_modules/es6-shim/es6-shim.min.js"></script>
     <script src="node_modules/systemjs/dist/system-polyfills.js"></script>
     <script src="node_modules/angular2/es6/dev/src/testing/shims_for_IE.js"></script>   
@@ -21,6 +14,8 @@
     <script src="node_modules/systemjs/dist/system.src.js"></script>
     <script src="node_modules/rxjs/bundles/Rx.js"></script>
     <script src="node_modules/angular2/bundles/angular2.dev.js"></script>
+    <script src="node_modules/angular2/bundles/router.js"></script>
+    <script src="node_modules/angular2/bundles/http.js"></script>
     
 	<script>
 		System.config({
@@ -33,14 +28,14 @@
 		});
 		System.import('app/main').then(null, console.error.bind(console));
 	</script>
-</h:head>
+</head>
 
-<h:body>
+<body>
 
 	<body>
-		<my-app>Loading...</my-app>
+		<talks>Loading...</talks>
 	</body>
 
-</h:body>
+</body>
 
 </html>

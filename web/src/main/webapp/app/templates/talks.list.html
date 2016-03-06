@@ -1,0 +1,9 @@
+<h1>Talks</h1>
+
+<ul>
+  <li *ngFor="#talk of (talks | async)">
+    <a href="#" (click)="selectTalk(talk)">
+      {{talk.title}}
+    </a>
+  </li>
+</ul>

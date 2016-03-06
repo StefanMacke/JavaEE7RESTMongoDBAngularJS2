@@ -1,0 +1,18 @@
+<div *ngIf="talk">
+  <h1>Talk {{talk.title}}</h1>
+
+  <br/><br/>
+
+  <form class="form-horizontal">
+    <field label="Title">
+      <input [(ngModel)]="talk.title"/>
+    </field>
+    <field label="Description">
+      <input [(ngModel)]="talk.description"/>
+    </field>
+  </form>
+
+  <br/><br/>
+
+  <a href="/#/talks">Back to the list</a>
+</div>
