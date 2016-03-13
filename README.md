@@ -1,3 +1,3 @@
-# JavaEE7MinimalExample
+# JavaEE7RESTMongoDBAngularJS2
 
-Minimalbeispiel für eine Anwendung mit Java EE 7, MongoDB, REST und AngularJS 2.
+Example project for my talk at CeBIT 2016: Java EE 7 with REST API on MongoDB and AngularJS 2 frontend.
