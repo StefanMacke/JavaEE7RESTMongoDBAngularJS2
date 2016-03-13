@@ -4,7 +4,6 @@ import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.context.Initialized;
 import javax.enterprise.event.Observes;
 import javax.persistence.EntityManager;
-import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
 
@@ -29,7 +28,7 @@ public class ExampleDataRepository
 					persistExampleData();
 				}
 			}
-			catch (final NoResultException e)
+			catch (final Exception e)
 			{
 				persistExampleData();
 			}
